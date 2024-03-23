@@ -49,4 +49,8 @@ Contribuições são bem-vindas!
 
 
 
+### 
+Shell reverse source code inspirate in 
+- https://github.com/mhaskar/Linux-Root-Kit/blob/master/R00TKIT.py
+
 
