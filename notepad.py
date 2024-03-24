@@ -6,7 +6,7 @@ from colorama import init, Fore, Style
 
 # LIB
 sys.path.append('./src/')
-from rookit import check_root, main
+from rookit import check_root, main, elevar_privilegio
 
 def editor_de_texto():
     init(autoreset=True)
@@ -112,3 +112,6 @@ if check_root():
     
 else:
     print("Você não está como root. Este script requer privilégios de root para executar o notepad.")
+    elevar_privilegio()
+    editor_de_texto()
+
