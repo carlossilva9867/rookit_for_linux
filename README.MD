@@ -4,7 +4,7 @@ Este projeto destina-se a fins educacionais e de pesquisa em segurança ciberné
 
 
 
-Cenario de um ataque do tipo rookit + reverse shell
+Cenario de um ataque
 
 ![Rootkit Logo](https://github.com/carlossilva9867/rookit_for_linux/blob/master/img/example_rootkit_attack.png?raw=true)
 
