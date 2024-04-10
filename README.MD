@@ -69,3 +69,5 @@ O programa foi desenvolvido em Python e compilado em formato **ELF** para permit
 ## Contribuindo
 
 Contribuições são bem-vindas! 
+
+..
