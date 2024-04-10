@@ -61,14 +61,11 @@ O programa foi desenvolvido em Python e compilado em formato **ELF** para permit
 | get_persistence        | Implementa mecanismos de persistência, garantindo que o rootkit seja executado automaticamente após reinicializações do sistema, aumentando a furtividade do ataque.       |
 | rootkit                | Script principal do rootkit, que reúne todas as funcionalidades e as inicia em segundo plano para operação contínua.                                                       |
 
-
-
+## Arquivos do projeto
+| Função                 | Descrição                                                                                                                                                                   |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| notepad             |Simulando aplicação legitma com backdoor embutido                                                           |
+--- 
 ## Contribuindo
 
 Contribuições são bem-vindas! 
-
-
-
-### 
-A shell reversa foi inspirada no projeto.
-- https://github.com/mhaskar/Linux-Root-Kit/blob/master/R00TKIT.py

