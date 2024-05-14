@@ -43,8 +43,12 @@
 -w /etc/sysconfig/network -p wa -k network_modifications
 
 # Monitoramento modulos do linux
--w /sbin/insmod -p x -k modules
--w /sbin/rmmod -p x -k modules
--w /sbin/modprobe -p x -k modules
+-w /sbin/insmod -p x -k modules_created
+-w /sbin/rmmod -p x -k modules_deleted
+-w /sbin/modprobe -p x -k modules_
 -a always,exit -F arch=b64 -S init_module -S delete_module -k modules
 
+# Monitoramento de software utilizados para compilação
+-w /usr/bin/gcc -p x -k gcc_execution
+
+-a always,exit -F arch=b64 -S execve -C uid!=euid -k preload_detection
