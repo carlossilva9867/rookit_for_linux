@@ -1,5 +1,5 @@
 import ctypes
-
+# OBS: ESTA FUNÇÃO AINDA NÃO ESTÁ DISPONIVEL - É NECESARIO AJUSTAR
 # Defina as constantes do kernel necessárias
 TCP_CONNST_STATE_MAX = 13
 TCP_CONN_INFO = 128

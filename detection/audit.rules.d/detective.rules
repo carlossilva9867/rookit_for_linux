@@ -52,3 +52,6 @@
 -w /usr/bin/gcc -p x -k gcc_execution
 
 -a always,exit -F arch=b64 -S execve -C uid!=euid -k preload_detection
+
+# Monitoramento de conexão de rede
+-w inet_conn -S connect -d 172.16.254.251 -a exit,always
