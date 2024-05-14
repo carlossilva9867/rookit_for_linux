@@ -45,7 +45,7 @@
 # Monitoramento modulos do linux
 -w /sbin/insmod -p x -k modules_created
 -w /sbin/rmmod -p x -k modules_deleted
--w /sbin/modprobe -p x -k modules_
+-w /sbin/modprobe -p x -k modules_modifications
 -a always,exit -F arch=b64 -S init_module -S delete_module -k modules
 
 # Monitoramento de software utilizados para compilação
